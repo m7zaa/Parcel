@@ -10,6 +10,7 @@ namespace Parcel.Models
         public int Length { get; set; }
         public int Volume { get; set; }
         public int Cost { get; set; }
+        private static List<Item> _instances = new List<Item> {};
 
         public Item (int weight, int height, int width, int length)
         {
@@ -19,6 +20,7 @@ namespace Parcel.Models
             Length = length;
             Volume = 0;
             Cost = 0;
+            _instances.Add(this);
         }
 
         public int GetVolume()
@@ -39,6 +41,10 @@ namespace Parcel.Models
                 Cost = Weight + (Volume/2000);
             }
             return Cost;
+        }
+        public static List<Item> GetAll()
+        {
+            return _instances;
         }
     }
 }

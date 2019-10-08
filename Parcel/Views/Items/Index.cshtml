@@ -1,3 +1,11 @@
 @using Parcel.Models;
+<!-- shows cost of package -->
+<h1>Parcels</h1>
+<ul>@foreach (Item item in Model)
+    {
+    <li>@item.Cost, @item.Volume, @item.Weight</li>
+    }
 
-<h1>@Model.Cost</h1>
+</ul>
+<a href='/items/new'>Ship another item.</a>
+<a href='/'>Return Home.</a>

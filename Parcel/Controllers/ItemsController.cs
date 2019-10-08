@@ -25,7 +25,9 @@ namespace Parcel.Controllers
             Item myItem = new Item(newWeight, newHeight, newWidth, newLength);
             myItem.GetVolume();
             myItem.GetCost();
-            return View(myItem);
+            List<Item> allItems = Item.GetAll();
+            return View(allItems);
+            
         }
     }
 }
